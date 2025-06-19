@@ -1,0 +1,154 @@
+/* Загальні стилі */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+header,
+footer {
+  background-color: #3b82f6;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1,
+footer p {
+  margin: 0;
+}
+
+/* Контейнер для всього */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Форма нового списку */
+#new-list-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#new-list-form input,
+#new-list-form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#new-list-form input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#new-list-form button {
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in;
+}
+
+#new-list-form button:hover {
+  background-color: #2563eb;
+}
+
+/* Списки */
+.todo-list {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list h3 {
+  margin-top: 0;
+  color: #2563eb;
+}
+
+/* Форма нової задачі */
+.new-task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.new-task-form input[type="text"],
+.new-task-form input[type="date"] {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.new-task-form button {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.new-task-form button:hover {
+  background-color: #059669;
+}
+
+/* Завдання */
+.tasks {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tasks li {
+  padding: 0.6rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tasks li:last-child {
+  border-bottom: none;
+}
+
+.tasks input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.task-title-text,
+.task-desc-text {
+  padding: 0.2rem 0.4rem;
+}
+
+.tasks time {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+button.edit-task-btn,
+button.delete-task-btn,
+.delete-list-btn {
+  background-color: #f87171;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+button.edit-task-btn:hover,
+button.delete-task-btn:hover,
+.delete-list-btn:hover {
+  background-color: #dc2626;
+}

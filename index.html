@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Список справ</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Мої списки справ</h1>
+    </header>
+
+    <main>
+      <section aria-label="Створити новий список">
+        <h2>Новий список</h2>
+        <form id="new-list-form">
+          <label for="list-name">Назва списку:</label>
+          <input type="text" id="list-name" required />
+          <button type="submit">Створити список</button>
+        </form>
+      </section>
+
+      <section aria-label="Списки справ" id="lists-container">
+        <!-- Динамічні списки справ -->
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Мій To-Do застосунок</p>
+    </footer>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
