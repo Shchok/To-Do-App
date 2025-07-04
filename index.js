@@ -24,7 +24,6 @@ function loadFromLocalStorage() {
   }
 }
 
-// ========== РЕНДЕРИНГ ==========
 function renderAll() {
   listsContainer.innerHTML = "";
   data.lists.forEach(renderList);
@@ -73,7 +72,6 @@ function renderTask(task) {
   return taskEl;
 }
 
-// ========== ДОДАТИ НОВИЙ СПИСОК ==========
 newListForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = listNameInput.value.trim();
@@ -91,7 +89,6 @@ newListForm.addEventListener("submit", (e) => {
   listNameInput.value = "";
 });
 
-// ========== ДОДАТИ / РЕДАГУВАТИ / ВИДАЛИТИ ЗАВДАННЯ ТА СПИСКИ ==========
 listsContainer.addEventListener("submit", (e) => {
   if (!e.target.classList.contains("new-task-form")) return;
   e.preventDefault();
@@ -125,14 +122,12 @@ listsContainer.addEventListener("click", (e) => {
   const listId = +listEl?.dataset.listId;
   const list = data.lists.find((l) => l.id === listId);
 
-  // Видалити список
   if (target.classList.contains("delete-list-btn")) {
     data.lists = data.lists.filter((l) => l.id !== listId);
     saveToLocalStorage();
     renderAll();
   }
 
-  // Видалити завдання
   if (target.classList.contains("delete-task-btn")) {
     const taskEl = target.closest("li");
     const taskId = +taskEl.dataset.taskId;
@@ -141,7 +136,6 @@ listsContainer.addEventListener("click", (e) => {
     renderAll();
   }
 
-  // Редагувати завдання
   if (target.classList.contains("edit-task-btn")) {
     const taskEl = target.closest("li");
     const taskId = +taskEl.dataset.taskId;
@@ -152,7 +146,6 @@ listsContainer.addEventListener("click", (e) => {
 
     const editable = titleEl.isContentEditable;
     if (editable) {
-      // Зберегти
       task.title = titleEl.textContent.trim();
       task.description = descEl.textContent.trim();
       saveToLocalStorage();
@@ -160,7 +153,6 @@ listsContainer.addEventListener("click", (e) => {
       descEl.contentEditable = "false";
       target.textContent = "Редагувати";
     } else {
-      // Увімкнути редагування
       titleEl.contentEditable = "true";
       descEl.contentEditable = "true";
       titleEl.focus();
@@ -168,7 +160,6 @@ listsContainer.addEventListener("click", (e) => {
     }
   }
 
-  // Позначити як виконане
   if (target.type === "checkbox") {
     const taskEl = target.closest("li");
     const taskId = +taskEl.dataset.taskId;
@@ -178,5 +169,4 @@ listsContainer.addEventListener("click", (e) => {
   }
 });
 
-// ========== ІНІЦІАЛІЗАЦІЯ ==========
 loadFromLocalStorage();
